@@ -1,3 +1,4 @@
+# Functions
 
 # Checker for blank inputs
 def get_non_blank_input(prompt):
@@ -10,17 +11,25 @@ def get_non_blank_input(prompt):
 
         print("Value cannot be blank. Please try again.")
 
+# Set number of riders per team
 NUMBER_OF_TEAM_RIDERS = 6
+rider_total = 0
 
-team_riders = []
+# Lists
+TEAM_RIDERS = []
+
+# Main routine
 
 team_name = get_non_blank_input("Enter your team name: ")
-print (f'Your team name is: {team_name}')
+print ('Your team name is: {}'.format(team_name))
 
-for i in range(NUMBER_OF_TEAM_RIDERS):
-    rider_name = get_non_blank_input(f'Enter name for Rider {i + 1}: ')
-    team_riders.append(rider_name)
+# loop for rider names
 
-print ("Your team riders are:")
+while rider_total < NUMBER_OF_TEAM_RIDERS:
+    rider_name = input(f"Enter rider #{rider_total + 1} name: ")
+    rider_total += 1
+    TEAM_RIDERS.append(rider_name)
+
+print("Your teams riders are: ")
 for i in range(NUMBER_OF_TEAM_RIDERS):
-    print(f'Rider {i + 1}: {team_riders[i]}')
+    print("Rider {}: {}".format(i + 1, TEAM_RIDERS[i]))
